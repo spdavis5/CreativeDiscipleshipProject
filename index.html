@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Literary Techniques in the Book of Mormon</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-content">
+        <a href="index.html" class="active">Home</a>
+        <a href="chiasmus.html">Chiasmus</a>
+        <a href="parallelism.html">Parallelism</a>
+        <a href="allegory.html">Allegory</a>
+      </div>
+    </nav>
+
+    <main>
+      <div class="hero">
+        <h1>Literary Techniques in the Book of Mormon</h1>
+      </div>
+
+      <div class="technique-grid">
+        <div class="technique-card">
+          <h2>Chiasmus</h2>
+          <a href="chiasmus.html" class="primary-button">Learn More</a>
+        </div>
+        <div class="technique-card">
+          <h2>Parallelism</h2>
+          <a href="parallelism.html" class="primary-button">Learn More</a>
+        </div>
+        <div class="technique-card">
+          <h2>Allegory</h2>
+          <a href="allegory.html" class="primary-button">Learn More</a>
+        </div>
+      </div>
+    </main>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Hero Animation
+        gsap.from(".hero", {
+          duration: 1,
+          opacity: 0,
+          y: 50,
+          ease: "power3.out",
+        });
+
+        // Ensure ScrollTrigger is registered
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Fix Technique Card Animation
+        gsap.from(".technique-card", {
+          duration: 0.8,
+          y: 50,
+          opacity: 0,
+          stagger: 0.2,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".technique-card",
+            start: "top 90%",
+            toggleActions: "play none none none", // Prevents cards from disappearing
+          },
+        });
+      });
+      // Smooth Scroll
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,265 @@
+/* Import Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@400;500;600;700&display=swap");
+
+/* CSS Variables */
+:root {
+  --primary-bg: #f9fafb;
+  --secondary-bg: #eef2f6;
+  --accent-color: #2c5282;
+  --primary-text: #1a202c;
+  --secondary-text: #718096;
+  --highlight-color: #fed7e2;
+  --button-color: #2c5282;
+  --button-hover: #2a4365;
+  --card-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+  --transition: all 0.3s ease;
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1.7;
+  color: var(--primary-text);
+  background-color: var(--primary-bg);
+  overflow-x: hidden;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Lora", serif;
+  color: var(--accent-color);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+}
+p {
+  margin-bottom: 1rem;
+}
+
+/* Navigation */
+nav {
+  background: var(--primary-bg);
+  padding: 1rem 0;
+  box-shadow: var(--card-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+nav a {
+  color: var(--secondary-text);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: var(--transition);
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--button-color);
+  background: var(--secondary-bg);
+}
+
+/* Main Content */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Hero Section */
+.hero {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../images/indexBackground.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 5rem 2rem;
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.hero h1 {
+  color: white;
+}
+.hero p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.2rem;
+}
+
+/* Buttons */
+.primary-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: var(--button-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.primary-button:hover {
+  background: var(--button-hover);
+}
+
+/* Technique Cards */
+.technique-grid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.technique-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  border: 2px solid var(--secondary-bg); /* Subtle border */
+  transition: var(--transition);
+  text-align: center;
+}
+
+.technique-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Article Styling */
+.technique-article {
+  background: white;
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+}
+
+/* Accordion */
+.accordion {
+  margin: 1.5rem 0;
+}
+
+.accordion-item {
+  border-bottom: 1px solid var(--secondary-bg);
+}
+
+.accordion-header {
+  padding: 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: var(--transition);
+}
+
+.accordion-header:hover {
+  background: var(--secondary-bg);
+}
+
+.accordion-content {
+  padding: 0 1rem 1rem;
+  display: none;
+}
+
+.accordion-content.active {
+  display: block;
+}
+
+/* Scripture Blocks */
+.scripture-block {
+  background: var(--secondary-bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  position: relative;
+}
+
+.scripture-line {
+  padding: 0.5rem;
+  transition: var(--transition);
+}
+
+.scripture-line:hover {
+  background: var(--highlight-color);
+  cursor: pointer;
+}
+
+.tooltip {
+  position: absolute;
+  background: var(--accent-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  display: none;
+  z-index: 10;
+}
+
+/* Search */
+.search-container {
+  margin: 2rem 0;
+  position: relative;
+}
+
+#search-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--secondary-text);
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+/* Footer */
+footer {
+  background: var(--secondary-bg);
+  padding: 2rem;
+  text-align: center;
+  color: var(--secondary-text);
+  margin-top: 3rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .hero {
+    padding: 3rem 1rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  .technique-article {
+    padding: 1.5rem;
+  }
+}
