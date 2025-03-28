@@ -99,8 +99,7 @@ main {
 /* Hero Section */
 .hero {
   background:
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("../images/indexBackground.jpg");
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
   background-size: cover;
   background-position: center;
   padding: 5rem 2rem;
